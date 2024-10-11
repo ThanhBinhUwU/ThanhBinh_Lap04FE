@@ -1,0 +1,535 @@
+﻿<style type="text/css">
+    html {
+        font-size: 14px;
+        font-family: 'Franklin Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+
+    body {
+        background-color: white;
+    }
+
+    #container {
+        border: 2px solid #ff0000;
+        border-radius: 10px;
+    }
+
+    header {
+        background-color: white;
+        border: 2px solid#000000;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 100px;
+    }
+
+    .search {
+        font-family: Inter, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.15;
+        text-size-adjust: 100%;
+        box-sizing: border-box;
+        width: 60%;
+        display: flex;
+        position: relative;
+        border: 1px solid rgb(221, 221, 227);
+        border-radius: 8px;
+        -webkit-box-align: center;
+        align-items: center;
+        letter-spacing: normal;
+    }
+
+    .search-box {
+        flex-grow: 0.8;
+        display: flex;
+        justify-content: center;
+    }
+
+    .search input {
+        width: 100%;
+        border: none;
+        padding: 10px;
+    }
+
+    .search button {
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: flex;
+    }
+
+        nav ul li {
+            margin-left: 20px;
+            font-size: 1.2rem;
+        }
+
+            nav ul li a {
+                text-decoration: none;
+                color: #000000;
+                font-weight: bold;
+            }
+
+    section {
+        background-color: whitesmoke;
+        min-height: 300px;
+    }
+
+    .address-bar {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #555;
+        max-width: 1200px;
+        margin: 0;
+        padding: 10px 20px;
+    }
+
+        .address-bar a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+    .cart-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+
+    .cart-items {
+        width: 70%;
+        background-color: white;
+        padding: 20px;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-summary {
+        width: 25%;
+        background-color: white;
+        padding: 20px;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 5px;
+        background-color: #ddd;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .progress {
+        height: 5px;
+        background-color: #28a745;
+    }
+
+    .freeship {
+        position: absolute;
+        right: 0;
+        top: -15px;
+        font-size: 12px;
+        color: #28a745;
+    }
+
+    .cart-item {
+        margin-bottom: 20px;
+    }
+
+    .cart-header {
+        font-weight: bold;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .cart-item-details {
+        margin-bottom: 20px;
+    }
+
+    .product {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .product img {
+            width: 100px;
+            margin-right: 20px;
+        }
+
+    .product-details {
+        width: 40%;
+    }
+
+        .product-details p {
+            margin-top: 20px;
+        }
+
+    .price, .total-price {
+        width: 15%;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .quantity {
+        display: flex;
+        align-items: center;
+    }
+
+        .quantity button {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+
+            .quantity button:hover {
+                background-color: #e0e0e0;
+            }
+
+        .quantity input {
+            width: 30px;
+            text-align: center;
+            border: 1px solid #ccc;
+            height: 30px;
+            margin: 0 5px;
+            font-size: 16px;
+            border-radius: 2px;
+            text-align: center;
+        }
+
+    .discount {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+        .discount input {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    
+    .checkout-btn {
+        /* Các thuộc tính hiện tại */
+        background-color: #ff0000;
+        color: white;
+        padding: 15px 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+        /* Thêm thuộc tính để ẩn nút khi không có sản phẩm nào được chọn */
+    }
+
+    .promo-text {
+        text-align: center;
+        margin-top: 5px; /* Tạo khoảng cách nhỏ giữa thanh tìm kiếm và dòng chữ */
+        width: 100%;
+    }
+
+        .promo-text p {
+            font-size: 14px;
+            color: #333;
+            letter-spacing: 1px;
+        }
+
+    /* Đảm bảo thanh tìm kiếm và các thành phần khác không bị ảnh hưởng */
+    .search-box {
+        margin-bottom: 5px; /* Khoảng cách giữa thanh tìm kiếm và dòng chữ */
+    }
+
+    .search input {
+        width: 100%;
+        padding: 10px;
+    }
+
+</style>
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Giỏ Hàng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div class="logo">
+                <img src="~/Scripts/img/tiki.jpg" alt="logo" />
+            </div>
+            <div class="search-box">
+                <div class="search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Giao nhanh 2H & dùng khung giờ" id="searchInput">
+                    <button onclick="searchFunction()">Tìm kiếm</button>
+                </div>
+            </div>
+
+            <!-- Dòng chữ nằm dưới thanh tìm kiếm -->
+            <div class="promo-text">
+                <p>khỏe đẹp&nbsp;&nbsp;nhà cửa&nbsp;&nbsp;sách&nbsp;&nbsp;thể thao&nbsp;&nbsp;trái cây&nbsp;&nbsp;thịt, trứng&nbsp;&nbsp;rau củ quả&nbsp;&nbsp;sữa, bơ, phô mai&nbsp;&nbsp;hải sản&nbsp;&nbsp;gạo&nbsp;&nbsp;mì ăn liền</p>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="~/Home/TrangChu"><i class="fas fa-home"></i>Trang chủ</a></li>
+                    <li><a href="#"><i class="fas fa-star"></i>Astra</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i>Tài khoản</a></li>
+                    <li class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">2</span>
+                    </li>
+                </ul>
+            </nav>
+
+</div>
+            <div class="address-bar">
+                Giao đến: <a href="#">Q.12, P. Hiệp Thành, Hồ Chí Minh</a>
+            </div>
+           
+
+            <div>
+                @RenderBody()
+            </div>
+        </header>
+            <main class="cart-container">
+                <section class="cart-items">
+                    <h2>Giỏ Hàng</h2>
+
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%;"></div>
+                        <div class="freeship">Freeship 30K</div>
+                    </div>
+                    <div class="cart-item">
+                        <div class="cart-header">
+                            <input type="checkbox"> Tất cả (2 sản phẩm)
+                        </div>
+                        <div class="cart-item-details">
+                            <h3>GIA DỤNG VIỆT</h3>
+                            <div class="product">
+                                <input type="checkbox">
+                                <img src="~/Scripts/img/dthoai tím.jpg" alt="Product Image" />
+                                <div class="product-details">
+                                    <h4>Điện thoại Samsung Galaxy A54 5G (8GB/128GB)</h4>
+                                    <p>Hàng chính hãng - Tím</p>
+                                </div>
+                                <div class="price">8.480.000đ</div>
+                                <div class="quantity">
+                                    <button class="btn-decrease">-</button>
+                                    <input value="1" min="1" class="quantity-input">
+                                    <button class="btn-increase">+</button>
+                                </div>
+                                <div class="total-price">8.480.000đ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item-details">
+                        <h3>Shop Khuyến Mãi</h3>
+                        <div class="product">
+                            <input type="checkbox">
+                            <img src="~/Scripts/img/dthoai den.jpg" alt="Product Image" />
+                            <div class="product-details">
+                                <h4>Điện thoại Samsung Galaxy A54 5G (8GB/256GB)</h4>
+                                <p>Hàng chính hãng - Tím</p>
+                            </div>
+                            <div class="price">8.990.000đ</div>
+                            <div class="quantity">
+                                <button class="btn-decrease">-</button>
+                                <input value="1" min="1" class="quantity-input">
+                                <button class="btn-increase">+</button>
+                            </div>
+                            <div class="total-price">8.990.000đ</div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Phần tổng quan đơn hàng -->
+                <aside class="cart-summary">
+                    <h3>Tiki Khuyến Mãi</h3>
+
+                    <!-- Phần nhập mã giảm giá -->
+                    <div class="discount">
+                        <input type="text" id="discount-code" placeholder="Nhập mã giảm giá">
+                        <button onclick="applyDiscount()">Áp dụng</button>
+                    </div>
+
+                    <div class="summary">
+                        <div class="row">
+                            <span>Tạm tính:</span>
+                            <span id="subtotal">8.480.000đ</span>
+                        </div>
+                        <div class="row">
+                            <span>Mã giảm giá:</span>
+                            <span id="discount-amount">0đ</span>
+                        </div>
+                        <div class="row">
+                            <span>Phí vận chuyển:</span>
+                            <span id="shipping-fee">30.000đ</span>
+                        </div>
+                        <div class="row">
+                            <span>Tổng tiền:</span>
+                            <span id="total-amount">8.510.000đ</span>
+                        </div>
+                        <p class="freeship-info" id="freeship-applied">FREESHIP đã được áp dụng!</p>
+
+                        <!-- Nút mua hàng -->
+                        <button class="checkout-btn">Mua Hàng</button>
+                    </div>
+                </aside>
+
+            </main>
+    </div>
+    <script>
+        // Hàm áp dụng mã giảm giá
+        function applyDiscount() {
+            const discountInput = document.getElementById('discount-code').value;
+            const subtotalElement = document.getElementById('subtotal');
+            const discountAmountElement = document.getElementById('discount-amount');
+            const shippingFeeElement = document.getElementById('shipping-fee');
+            const totalAmountElement = document.getElementById('total-amount');
+            const freeshipInfoElement = document.getElementById('freeship-applied');
+
+            // Lấy giá trị hiện tại từ các phần tử HTML
+            let subtotal = parseFloat(subtotalElement.innerText.replace(/[^\d]/g, ''));
+            let shippingFee = parseFloat(shippingFeeElement.innerText.replace(/[^\d]/g, ''));
+            let discountAmount = 0;
+
+            // Kiểm tra mã giảm giá là "GIAM50K" hoặc áp dụng Freeship
+            if (discountInput === "GIAM50K") {
+                discountAmount = 50000; // Giảm 50K
+            } else {
+                alert("Mã giảm giá không hợp lệ!");
+            }
+
+            // Áp dụng miễn phí vận chuyển nếu tổng tiền đủ điều kiện
+            if (subtotal >= 300000) {
+                shippingFee = 0;
+                freeshipInfoElement.style.display = 'block'; // Hiển thị thông báo freeship
+            } else {
+                freeshipInfoElement.style.display = 'none'; // Ẩn thông báo freeship
+            }
+
+            // Tính lại tổng tiền
+            let totalAmount = subtotal - discountAmount + shippingFee;
+
+            // Cập nhật giao diện
+            discountAmountElement.innerText = discountAmount.toLocaleString('vi-VN') + 'đ';
+            shippingFeeElement.innerText = shippingFee.toLocaleString('vi-VN') + 'đ';
+            totalAmountElement.innerText = totalAmount.toLocaleString('vi-VN') + 'đ';
+        }
+
+        // Lấy tất cả các nút tăng và giảm số lượng
+        document.addEventListener('DOMContentLoaded', function () {
+            // Lấy tất cả các nút tăng và giảm số lượng
+            const decreaseButtons = document.querySelectorAll('.btn-decrease');
+            const increaseButtons = document.querySelectorAll('.btn-increase');
+            const quantityInputs = document.querySelectorAll('.quantity-input');
+            const productCheckboxes = document.querySelectorAll('.product input[type="checkbox"]'); // Lấy các checkbox sản phẩm
+            const selectAllCheckbox = document.querySelector('#selectAll'); // Lấy checkbox "Tất cả"
+
+            // Hàm giảm số lượng sản phẩm
+            decreaseButtons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    let currentQuantity = parseInt(quantityInputs[index].value);
+                    if (currentQuantity > 1) {
+                        quantityInputs[index].value = currentQuantity - 1;
+                    }
+                    updateTotalPrice(index); // Cập nhật lại tổng giá sau khi thay đổi số lượng
+                });
+            });
+
+            // Hàm tăng số lượng sản phẩm
+            increaseButtons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    let currentQuantity = parseInt(quantityInputs[index].value);
+                    quantityInputs[index].value = currentQuantity + 1;
+                    updateTotalPrice(index); // Cập nhật lại tổng giá sau khi thay đổi số lượng
+                });
+            });
+
+            // Hàm cập nhật lại tổng giá dựa trên số lượng và giá của sản phẩm
+            function updateTotalPrice(index) {
+                const productPrices = document.querySelectorAll('.price');
+                const totalPrices = document.querySelectorAll('.total-price');
+
+                let price = parseFloat(productPrices[index].innerText.replace(/[^\d]/g, ''));
+                let quantity = parseInt(quantityInputs[index].value);
+                let totalPrice = price * quantity;
+
+                totalPrices[index].innerText = totalPrice.toLocaleString('vi-VN') + 'đ'; // Hiển thị giá tổng tiền
+
+                // Cập nhật lại số lượng vào nút Mua Hàng
+                updateCheckoutButton();
+            }
+
+            // Hàm cập nhật số lượng sản phẩm đã chọn trên nút Mua Hàng
+            function updateCheckoutButton() {
+                let totalItems = 0;
+                productCheckboxes.forEach((checkbox, index) => {
+                    if (checkbox.checked) {
+                        totalItems += parseInt(quantityInputs[index].value);
+                    }
+                });
+
+                // Cập nhật số lượng vào nút Mua Hàng
+                const checkoutBtn = document.querySelector('.checkout-btn');
+                if (checkoutBtn) {
+                    checkoutBtn.innerText = `Mua Hàng (${totalItems} sản phẩm)`;
+                }
+            }
+
+            // Hàm để chọn/bỏ chọn tất cả sản phẩm khi click vào checkbox "Tất cả"
+            selectAllCheckbox.addEventListener('change', function () {
+                productCheckboxes.forEach(checkbox => {
+                    checkbox.checked = this.checked; // Chọn hoặc bỏ chọn tất cả checkbox sản phẩm
+                });
+
+                // Cập nhật lại nút Mua Hàng
+                updateCheckoutButton();
+            });
+
+            // Khi checkbox sản phẩm thay đổi, cập nhật lại số lượng vào nút Mua Hàng
+            productCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function () {
+                    updateCheckoutButton();
+                });
+            });
+
+            // Khi trang tải xong, cập nhật số lượng sản phẩm đã chọn
+            updateCheckoutButton();
+        });
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

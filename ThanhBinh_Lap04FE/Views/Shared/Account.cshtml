@@ -1,0 +1,162 @@
+﻿@{
+    Layout = "~/Views/Shared/_MasterLayoutKT.cshtml";
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản của tôi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        html {
+            font-size: 14px;
+            font-family: 'Franklin Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        #container {
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+        }
+
+        header {
+            background-color: white;
+            border: 2px solid#000000;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+            nav ul li {
+                margin-left: 20px;
+                font-size: 1.2rem;
+            }
+
+                nav ul li a {
+                    text-decoration: none;
+                    color: #000000;
+                    font-weight: bold;
+                }
+
+        .account-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #ff0000;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+            button:hover {
+                background-color: #e60000;
+            }
+
+        .address-bar {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555;
+            padding: 10px 20px;
+        }
+
+            .address-bar a {
+                color: #007bff;
+                text-decoration: none;
+                font-weight: bold;
+            }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div class="logo">
+                <img src="~/Scripts/img/tiki.jpg" alt="logo" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="~/Home/TrangChu"><i class="fas fa-home"></i>Trang chủ</a></li>
+                    <li><a href="#"><i class="fas fa-star"></i>Astra</a></li>
+                    <li><a href="account.html"><i class="fas fa-user"></i>Tài khoản</a></li>
+                    <li class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">2</span>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="address-bar">
+            Giao đến: <a href="#">Q.12, P. Hiệp Thành, Hồ Chí Minh</a>
+        </div>
+
+        <main class="account-container">
+            <h2>Thông Tin Tài Khoản</h2>
+            <form>
+                <label for="name">Họ tên</label>
+                <input type="text" id="name" placeholder="Nhập họ và tên" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Nhập email" required>
+
+                <label for="address">Địa chỉ</label>
+                <input type="text" id="address" placeholder="Nhập địa chỉ" required>
+
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+
+                <button type="submit">Lưu thông tin</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
+
+
+
