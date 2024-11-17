@@ -306,103 +306,100 @@
                     </li>
                 </ul>
             </nav>
-
-</div>
             <div class="address-bar">
                 Giao đến: <a href="#">Q.12, P. Hiệp Thành, Hồ Chí Minh</a>
             </div>
-           
-
-            <div>
-                @RenderBody()
-            </div>
-        </header>
-            <main class="cart-container">
-                <section class="cart-items">
-                    <h2>Giỏ Hàng</h2>
-
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 50%;"></div>
-                        <div class="freeship">Freeship 30K</div>
-                    </div>
-                    <div class="cart-item">
-                        <div class="cart-header">
-                            <input type="checkbox"> Tất cả (2 sản phẩm)
-                        </div>
-                        <div class="cart-item-details">
-                            <h3>GIA DỤNG VIỆT</h3>
-                            <div class="product">
-                                <input type="checkbox">
-                                <img src="~/Scripts/img/dthoai tím.jpg" alt="Product Image" />
-                                <div class="product-details">
-                                    <h4>Điện thoại Samsung Galaxy A54 5G (8GB/128GB)</h4>
-                                    <p>Hàng chính hãng - Tím</p>
-                                </div>
-                                <div class="price">8.480.000đ</div>
-                                <div class="quantity">
-                                    <button class="btn-decrease">-</button>
-                                    <input value="1" min="1" class="quantity-input">
-                                    <button class="btn-increase">+</button>
-                                </div>
-                                <div class="total-price">8.480.000đ</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart-item-details">
-                        <h3>Shop Khuyến Mãi</h3>
-                        <div class="product">
-                            <input type="checkbox">
-                            <img src="~/Scripts/img/dthoai den.jpg" alt="Product Image" />
-                            <div class="product-details">
-                                <h4>Điện thoại Samsung Galaxy A54 5G (8GB/256GB)</h4>
-                                <p>Hàng chính hãng - Tím</p>
-                            </div>
-                            <div class="price">8.990.000đ</div>
-                            <div class="quantity">
-                                <button class="btn-decrease">-</button>
-                                <input value="1" min="1" class="quantity-input">
-                                <button class="btn-increase">+</button>
-                            </div>
-                            <div class="total-price">8.990.000đ</div>
-                        </div>
-                    </div>
-                </section>
-                <!-- Phần tổng quan đơn hàng -->
-                <aside class="cart-summary">
-                    <h3>Tiki Khuyến Mãi</h3>
-
-                    <!-- Phần nhập mã giảm giá -->
-                    <div class="discount">
-                        <input type="text" id="discount-code" placeholder="Nhập mã giảm giá">
-                        <button onclick="applyDiscount()">Áp dụng</button>
-                    </div>
-
-                    <div class="summary">
-                        <div class="row">
-                            <span>Tạm tính:</span>
-                            <span id="subtotal">8.480.000đ</span>
-                        </div>
-                        <div class="row">
-                            <span>Mã giảm giá:</span>
-                            <span id="discount-amount">0đ</span>
-                        </div>
-                        <div class="row">
-                            <span>Phí vận chuyển:</span>
-                            <span id="shipping-fee">30.000đ</span>
-                        </div>
-                        <div class="row">
-                            <span>Tổng tiền:</span>
-                            <span id="total-amount">8.510.000đ</span>
-                        </div>
-                        <p class="freeship-info" id="freeship-applied">FREESHIP đã được áp dụng!</p>
-
-                        <!-- Nút mua hàng -->
-                        <button class="checkout-btn">Mua Hàng</button>
-                    </div>
-                </aside>
-
-            </main>
+            </header>
     </div>
+
+
+    <div>
+        @RenderBody()
+    </div>
+    <main class="cart-container">
+        <section class="cart-items">
+            <h2>Giỏ Hàng</h2>
+
+            <div class="progress-bar">
+                <div class="progress" style="width: 50%;"></div>
+                <div class="freeship">Freeship 30K</div>
+            </div>
+            <div class="cart-item">
+                <div class="cart-header">
+                    <input type="checkbox"> Tất cả (2 sản phẩm)
+                </div>
+                <div class="cart-item-details">
+                    <h3>GIA DỤNG VIỆT</h3>
+                    <div class="product">
+                        <input type="checkbox">
+                        <img src="~/Scripts/img/dthoai tím.jpg" alt="Product Image" />
+                        <div class="product-details">
+                            <h4>Điện thoại Samsung Galaxy A54 5G (8GB/128GB)</h4>
+                            <p>Hàng chính hãng - Tím</p>
+                        </div>
+                        <div class="price">8.480.000đ</div>
+                        <div class="quantity">
+                            <button class="btn-decrease">-</button>
+                            <input value="1" min="1" class="quantity-input">
+                            <button class="btn-increase">+</button>
+                        </div>
+                        <div class="total-price">8.480.000đ</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item-details">
+                <h3>Shop Khuyến Mãi</h3>
+                <div class="product">
+                    <input type="checkbox">
+                    <img src="~/Scripts/img/dthoai den.jpg" alt="Product Image" />
+                    <div class="product-details">
+                        <h4>Điện thoại Samsung Galaxy A54 5G (8GB/256GB)</h4>
+                        <p>Hàng chính hãng - Tím</p>
+                    </div>
+                    <div class="price">8.990.000đ</div>
+                    <div class="quantity">
+                        <button class="btn-decrease">-</button>
+                        <input value="1" min="1" class="quantity-input">
+                        <button class="btn-increase">+</button>
+                    </div>
+                    <div class="total-price">8.990.000đ</div>
+                </div>
+            </div>
+        </section>
+        <!-- Phần tổng quan đơn hàng -->
+        <aside class="cart-summary">
+            <h3>Tiki Khuyến Mãi</h3>
+
+            <!-- Phần nhập mã giảm giá -->
+            <div class="discount">
+                <input type="text" id="discount-code" placeholder="Nhập mã giảm giá">
+                <button onclick="applyDiscount()">Áp dụng</button>
+            </div>
+
+            <div class="summary">
+                <div class="row">
+                    <span>Tạm tính:</span>
+                    <span id="subtotal">8.480.000đ</span>
+                </div>
+                <div class="row">
+                    <span>Mã giảm giá:</span>
+                    <span id="discount-amount">0đ</span>
+                </div>
+                <div class="row">
+                    <span>Phí vận chuyển:</span>
+                    <span id="shipping-fee">30.000đ</span>
+                </div>
+                <div class="row">
+                    <span>Tổng tiền:</span>
+                    <span id="total-amount">8.510.000đ</span>
+                </div>
+                <p class="freeship-info" id="freeship-applied">FREESHIP đã được áp dụng!</p>
+
+                <!-- Nút mua hàng -->
+                <button class="checkout-btn">Mua Hàng</button>
+            </div>
+        </aside>
+    </main>
     <script>
         // Hàm áp dụng mã giảm giá
         function applyDiscount() {
@@ -432,6 +429,43 @@
             } else {
                 freeshipInfoElement.style.display = 'none'; // Ẩn thông báo freeship
             }
+
+            // Hàm tính tổng số lượng sản phẩm trong giỏ
+            function updateTotalQuantity() {
+                const quantityInputs = document.querySelectorAll('.quantity-input'); // Lấy tất cả các ô nhập số lượng
+                let totalQuantity = 0;
+
+                // Lặp qua tất cả các ô nhập số lượng và cộng dồn
+                quantityInputs.forEach(input => {
+                    totalQuantity += parseInt(input.value); // Lấy giá trị và chuyển thành số nguyên
+                });
+
+                // Cập nhật văn bản trên nút "Mua Hàng"
+                const buyButton = document.querySelector('.checkout-btn');
+                buyButton.innerText = `Mua Hàng (${totalQuantity} sản phẩm)`;
+            }
+
+            // Lắng nghe sự kiện click trên các nút tăng (+) hoặc giảm (-)
+            document.querySelectorAll('.increase-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const input = button.previousElementSibling; // Ô nhập liền trước nút
+                    input.value = parseInt(input.value) + 1; // Tăng giá trị lên 1
+                    updateTotalQuantity(); // Cập nhật tổng số lượng
+                });
+            });
+
+            document.querySelectorAll('.decrease-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const input = button.nextElementSibling; // Ô nhập liền sau nút
+                    if (parseInt(input.value) > 1) { // Không cho phép giá trị nhỏ hơn 1
+                        input.value = parseInt(input.value) - 1; // Giảm giá trị đi 1
+                        updateTotalQuantity(); // Cập nhật tổng số lượng
+                    }
+                });
+            });
+
+            // Gọi hàm ngay khi trang tải xong để hiển thị đúng số lượng ban đầu
+            updateTotalQuantity();
 
             // Tính lại tổng tiền
             let totalAmount = subtotal - discountAmount + shippingFee;
@@ -522,14 +556,6 @@
             // Khi trang tải xong, cập nhật số lượng sản phẩm đã chọn
             updateCheckoutButton();
         });
-
-
-
-
-
-
-    </script>
-
+ </script>
 </body>
-
 </html>
